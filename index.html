@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="myModule">
+	<section ng-controller="myController">
+		<label for="search">Search:</label>
+		<input id="search" type="text" ng-model="itemFilter">
+		<ul>
+			<li ng-repeat="do in toDoList | filter: itemFilter">{{do}}</li>
+		</ul>
+		<input type="text" ng-model="newItem">
+		<button id="add" type="button" value="Add" ng-click="addItem()">Add</button>
+	</section>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
